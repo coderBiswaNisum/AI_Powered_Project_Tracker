@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './HomePage.css';
-  import logo from '../../assets/Images/logo.png'
+  import logo from '../../assets/Images/logo.PNG'
 
 
 const HomePage = () => {
