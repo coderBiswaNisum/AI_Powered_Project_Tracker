@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './HomePage.css';
+  import Logo from '../../assets/Images/logo.png'
+
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState('text');
@@ -72,7 +74,8 @@ const HomePage = () => {
       <div className="">
         <div className="container">
         <div className="row align-items-center">
-            <div className="col">
+            <div className="col d-flex">
+                <img src={Logo} alt="" width={50}/>
               <h1 className="header-title">AI-Powered Project Tracker</h1>
               <p className="header-subtitle">Professional Work Submission Portal</p>
             </div>
