@@ -1,0 +1,32 @@
+.processed-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth transitions for state changes */
+.modal-body {
+  transition: all 0.3s ease;
+}
+
+/* Custom spinner styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+/* Text area styling for better readability */
+.bg-light {
+  background-color: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+}
