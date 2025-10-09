@@ -11,7 +11,6 @@ const InfoPanel = () => {
   return (
     <div className="info-panel">
       <div className="info-header">
-        <i className="info-icon">🤖</i>
         <h3>AI Processing Features</h3>
       </div>
       <div className="info-features">

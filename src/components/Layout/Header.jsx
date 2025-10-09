@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from '../../assets/Images/logo.PNG';
+import logo from '../../assets/Images/nisum-technologies-logo.webp';
 
 const Header = () => {
   return (
@@ -8,8 +8,9 @@ const Header = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col"style={{display:'flex',justifyContent:'space-between'}}>
+            <img src={logo} alt="AI Project Tracker Logo" style={{width:'200px',height:'100%'}} />
             <div className="header-brand">
-              <img src={logo} alt="AI Project Tracker Logo" width={50} />
+              
               <div className="header-titles">
                 <h1 className="header-title">AI-Powered Project Tracker</h1>
                 <p className="header-subtitle">Professional Work Submission Portal</p>
