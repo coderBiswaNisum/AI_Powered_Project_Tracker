@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "./HomePage.css";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GoogleGenAI } from "@google/genai";
+// import {employeeTasks} from "../assets/Objects/EmployeeTaskList"
 
 // Components
 import Header from "../components/Layout/Header";
@@ -10,6 +11,7 @@ import SubmissionForm from "../components/Submission/SubmissionForm";
 import SubmissionConfirmation from "../components/Submission/SubmissionConfirmation";
 import InfoPanel from "../components/Info/InfoPanel";
 import TaskTable from "../components/Layout/TaskTable";
+import TaskList from "../components/Layout/TaskList";
 
 const HomePage = () => {
   // State Management
@@ -23,6 +25,15 @@ const HomePage = () => {
   const [processedText, setProcessedText] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // for status and selected task
+
+  const [selectedTask, setSelectedTask] = useState("");
+  const [statusTask, setStatusTask] = useState("");
+  const today = new Date().toISOString().split("T")[0];
+  const [selectedDate, setSelectedDate] = useState(today);
+
+  // const [taskNStatus,setTaskNStatus] = useState({task:'hehe',status:'hoho'})
   // const [addTask,setAddTask] = useState(JSON.parse(localStorage.getItem('taskData')))
   let addTask = JSON.parse(localStorage.getItem("taskData"));
 
@@ -82,6 +93,9 @@ const HomePage = () => {
     setProcessedText("");
     setShowConfirmation(false);
     setErrorMessage("");
+    setSelectedDate(today);
+    setStatusTask('');
+    setSelectedTask('')
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
@@ -173,7 +187,12 @@ const HomePage = () => {
 
       const updatedTasks = [
         ...addTask,
-        { date: today.toISOString().slice(0, 10), task: cleanedTask }, // use the cleaned value here
+        {
+          date: selectedDate,
+          selectedTask: selectedTask,
+          status: statusTask,
+          workDescription: cleanedTask,
+        },
       ];
 
       localStorage.setItem("taskData", JSON.stringify(updatedTasks));
@@ -227,7 +246,7 @@ const HomePage = () => {
                 ></button>
               </div>
             )}
-
+            <TaskList />
             <SubmissionForm
               activeTab={activeTab}
               onTabChange={handleTabChange}
@@ -245,6 +264,14 @@ const HomePage = () => {
               onSubmit={handleSubmit}
               onReset={resetForm}
               fileInputRef={fileInputRef}
+              // setTaskNStatus = {setTaskNStatus}
+              // taskNStatus = {taskNStatus}
+              selectedDate={selectedDate}
+              setSelectedDate={setSelectedDate}
+              statusTask={statusTask}
+              setStatusTask={setStatusTask}
+              selectedTask={selectedTask}
+              setSelectedTask={setSelectedTask}
             />
 
             <TaskTable refresh={refresh} />

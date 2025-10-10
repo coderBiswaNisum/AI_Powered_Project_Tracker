@@ -5,6 +5,24 @@
   text-align: center;
 }
 
+.toggleButton{
+  border: 2px solid rgb(151, 156, 255);
+  margin-bottom: 1rem;
+  color:rgb(2, 11, 193)
+
+}
+.toggleButton:active{
+ background-color: #10046b;
+  color:white;
+  border: 2px solid rgb(151, 156, 255);
+}
+
+.toggleButton:focus {
+  outline: rgb(151, 156, 255); /* Removes the default focus outline */
+  border: 2px solid rgb(151, 156, 255);
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;

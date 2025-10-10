@@ -23,7 +23,7 @@ app.post("/process-text", async (req, res) => {
 
     // Define a professional system prompt
     const systemPrompt =
-      "You are a professional writing assistant. Convert the user's informal work update into a professional, concise, and well-structured paragraph suitable for a corporate project tracker. Preserve all key information about tasks completed, progress, and challenges, but improve the language, clarity, and business tone. Do not add any information not present in the original text.";
+      "You are a professional writing assistant. Your task is to process the user’s informal work update and convert it into a well-organized, concise, and professional list of tasks suitable for a corporate project tracker. The output should be in a point-wise format with clear line breaks for readability. Each task should be broken down individually, covering key information such as tasks completed, progress made, and any challenges or blockers encountered. The language should be clear, formal, and business-appropriate, with no additional information added. The goal is to maintain the original details provided by the user while improving the overall clarity, tone, and structure of the update.";
 
     // Send the request to the Gemini API
     const response = await ai.models.generateContent({
