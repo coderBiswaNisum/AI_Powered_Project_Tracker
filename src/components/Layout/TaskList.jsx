@@ -4,7 +4,7 @@ import {employeeTasks} from "../../assets/Objects/EmployeeTaskList"
 const TaskList = () => {
 
   return (
-    <div style={{ maxWidth: "100%", margin: "20px auto" }}>
+    <div className="container" style={{ maxWidth: "100%", margin: "20px auto" }}>
         <h2>Assigned Tasks</h2>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>

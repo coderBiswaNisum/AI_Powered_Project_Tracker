@@ -60,7 +60,7 @@ const TaskTable = ({ refresh }) => {
   }, [refresh]);
 
   return (
-    <div>
+    <div className="container">
       <h2>Your Past Submissions</h2>
       <table style={{ width: "100%", borderCollapse: "collapse",textAlign:'left' }}>
         <thead>

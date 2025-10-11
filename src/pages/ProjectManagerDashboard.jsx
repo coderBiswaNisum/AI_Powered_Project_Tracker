@@ -8,7 +8,6 @@ const ProjectManagerDashboard = () => {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [selectedDate, setSelectedDate] = useState('');
 
-  // Dummy data structure
   const dummyData = {
     projects: [
       {
@@ -166,7 +165,6 @@ const ProjectManagerDashboard = () => {
   const currentProject = dummyData.projects.find(proj => proj.id === selectedProject);
   const selectedEmployeeData = currentProject.employees.find(emp => emp.id === selectedEmployee);
 
-  // Filter submissions by date if selected
   const filteredSubmissions = selectedEmployeeData?.submissions.filter(sub => 
     selectedDate ? sub.date === selectedDate : true
   ) || [];
@@ -208,7 +206,6 @@ const ProjectManagerDashboard = () => {
       </div>
 
       <div className="dashboard-content">
-        {/* Project Overview */}
         <div className="project-overview">
           <div className="overview-card">
             <h3>{currentProject.name}</h3>
@@ -221,7 +218,6 @@ const ProjectManagerDashboard = () => {
         </div>
 
         <div className="main-layout">
-          {/* Employees List */}
           <div className="employees-section">
             <h2>Team Members</h2>
             <div className="employees-list">
@@ -246,7 +242,6 @@ const ProjectManagerDashboard = () => {
             </div>
           </div>
 
-          {/* Submissions Details */}
           <div className="submissions-section">
             {selectedEmployeeData ? (
               <>

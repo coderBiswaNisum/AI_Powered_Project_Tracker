@@ -158,7 +158,7 @@ const SubmissionForm = ({
             marginLeft: "1rem",
           }}
         >
-          <h3>Change Date</h3>
+          <h3>Select Date</h3>
           <input
             type="date"
             id="datePicker"
