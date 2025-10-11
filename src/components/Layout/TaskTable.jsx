@@ -12,7 +12,7 @@ const TaskTable = ({ refresh }) => {
     {
       date: "2025-10-02",
       selectedTask: "Implement dashboard UI",
-      status: "Completed",
+      status: "In Progress",
       workDescription:
         "Designed and implemented the user interface for the project dashboard.",
     },
@@ -33,7 +33,7 @@ const TaskTable = ({ refresh }) => {
     {
       date: "2025-10-05",
       selectedTask: "Update documentation",
-      status: "Completed",
+      status: "In Progress",
       workDescription:
         "Reviewed and updated project documentation for the latest features and fixes.",
     },
